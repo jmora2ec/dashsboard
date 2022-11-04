@@ -22,11 +22,11 @@ export const userColums = [
   {
     field: 'status',
     headerName: 'Status',
-    width: 230,
-    rederCell: (params) => {
+    width: 180,
+    renderCell: (params) => {
       return (
         <div className={`cellWithStatus ${params.row.status}`}>
-          {params.row.status}
+          {params.row.status} 
         </div>
       );
     },
