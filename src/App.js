@@ -7,6 +7,9 @@ import Login from "./pages/login/Login";
 import Single from "./pages/single/Single";
 import New from "./pages/new/New";
 import { userInputs, productInputs } from "./services/formSource";
+import "./style/dark.scss";
+import { DarkModeContext } from "./context/darkModeContext";
+import { useContext, useState } from "react";
 
 const router = createBrowserRouter([
   {
@@ -45,7 +48,13 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  const { darkMode } = useContext(DarkModeContext);
+
+  return (
+    <div className={darkMode ? "app dark" : "app"}>
+      <RouterProvider router={router} />
+    </div>
+  );
 }
 
 export default App;

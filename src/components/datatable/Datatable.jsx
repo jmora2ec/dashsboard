@@ -31,6 +31,7 @@ export default function DataTable() {
         </Link>
       </div>
       <DataGrid
+        className="dataGrid"
         rows={userRows}
         columns={userColums.concat(actionColum)}
         pageSize={9}
